@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('/index', function (){
 Route::get('/tasks', [App\Http\Controllers\Tasks::class, 'index']);
 
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'processPayment']);
+
+// Assuming you're using POST method for form submission
+Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process.payment');
+
